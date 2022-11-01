@@ -2,18 +2,27 @@ import 'package:flutter/material.dart';
 
 import 'menu_item.dart';
 
-class Sidebar extends StatelessWidget {
+class Sidebar extends StatefulWidget {
   const Sidebar({Key? key}) : super(key: key);
+
+  @override
+  State<Sidebar> createState() => _SidebarState();
+}
+
+class _SidebarState extends State<Sidebar> {
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 250,
       child: RawScrollbar(
+        controller: _scrollController,
         thumbColor: Colors.redAccent,
         radius: const Radius.circular(8),
         crossAxisMargin: 2,
         child: ListView(
+          controller: _scrollController,
           padding: const EdgeInsets.all(0),
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
@@ -103,5 +112,11 @@ class Sidebar extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 }

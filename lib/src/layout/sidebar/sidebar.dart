@@ -14,6 +14,8 @@ class Sidebar extends StatelessWidget {
         radius: const Radius.circular(8),
         crossAxisMargin: 2,
         child: ListView(
+          padding: const EdgeInsets.all(0),
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           children: const [
             SizedBox(
@@ -21,13 +23,15 @@ class Sidebar extends StatelessWidget {
             ),
             MenuItem(
               title: 'Dashboard',
-              route: 'home',
+              route: '/',
             ),
             MenuItem(
               title: 'Inbox',
+              route: '/sample_item',
             ),
             MenuItem(
               title: 'File Manager',
+              route: '/settings',
             ),
             MenuItem(
               title: 'Chat',

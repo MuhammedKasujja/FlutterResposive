@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Breadcrumb extends StatelessWidget {
   final List<Crumb> crumbs;
@@ -9,28 +10,48 @@ class Breadcrumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: crumbs
-          .map((c) => Padding(
+    return ResponsiveVisibility(
+      hiddenWhen: const [Condition.smallerThan(name: TABLET)],
+      child: Row(
+        children: crumbs
+            .asMap()
+            .entries
+            .map(
+              (entry) => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
                     Text(
-                      c.name,
+                      entry.value.name,
                       style: const TextStyle(color: Colors.white),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(4.0),
-                      child: Icon(
-                        Icons.chevron_right_rounded,
-                        color: Colors.grey,
-                        size: 15,
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: crumbs.length - 1 != entry.key
+                          ? const Icon(
+                              Icons.chevron_right_rounded,
+                              color: Colors.grey,
+                              size: 15,
+                            )
+                          : const SizedBox.shrink(),
                     )
                   ],
                 ),
-              ))
-          .toList(),
+              ),
+            )
+            .toList(),
+      ),
+      replacement: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Text(
+              crumbs.last.name,
+              style: const TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

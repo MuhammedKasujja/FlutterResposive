@@ -67,12 +67,62 @@ class HeaderActions extends StatelessWidget {
         ],
       ),
       replacement: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          _showContextMenu(context);
+        },
         icon: const Icon(
-          Icons.settings,
+          Icons.menu,
           color: Colors.white,
         ),
       ),
     );
+  }
+
+  void _showContextMenu(BuildContext context) async {
+    final RenderObject? overlay =
+        Overlay.of(context)?.context.findRenderObject();
+
+    final result = await showMenu(
+        context: context,
+
+        // Show the context menu at the tap location
+        position: RelativeRect.fromRect(
+          const Rect.fromLTWH(-1, -1, 30, 30),
+          Rect.fromLTWH(
+            0,
+            0,
+            overlay!.paintBounds.size.width,
+            overlay.paintBounds.size.height,
+          ),
+        ),
+
+        // set a list of choices for the context menu
+        items: [
+          const PopupMenuItem(
+            value: 'favorites',
+            child: Text('Add To Favorites'),
+          ),
+          const PopupMenuItem(
+            value: 'comment',
+            child: Text('Write Comment'),
+          ),
+          const PopupMenuItem(
+            value: 'hide',
+            child: Text('Hide'),
+          ),
+        ]);
+
+    // Implement the logic for each choice here
+    switch (result) {
+      case 'favorites':
+        debugPrint('Add To Favorites');
+        break;
+      case 'comment':
+        debugPrint('Write Comment');
+        break;
+      case 'hide':
+        debugPrint('Hide');
+        break;
+    }
   }
 }

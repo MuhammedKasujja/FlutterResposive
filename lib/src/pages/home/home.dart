@@ -38,6 +38,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Breadcrumb(
                         crumbs: [
+                          Crumb(name: 'Home'),
                           Crumb(name: 'Application'),
                           Crumb(name: 'Dashboard')
                         ],
@@ -62,19 +63,20 @@ class HomePage extends StatelessWidget {
                     color: const Color(0xff2B286E),
                     borderRadius: BorderRadius.circular(8),
                   ),
+                  child: const Sidebar(),
                 ),
               ),
               Expanded(
                 child: Container(
                   width: MediaQuery.of(context).size.width - 250 - 40,
                   height: MediaQuery.of(context).size.height - 80,
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(16),
+                  // margin: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color(0xffF1F5F9),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: DashboardPage(),
+                  child: const DashboardPage(),
                 ),
               ),
             ],

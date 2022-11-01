@@ -15,11 +15,15 @@ class MenuItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 8.0,
-        horizontal: 25,
+        horizontal: 20,
       ),
       child: InkWell(
         onTap: () {
-          if (route != null) Navigator.pushNamed(context, route!);
+          if (route != null) {
+            if (link != null && link != route) {
+              Navigator.pushNamed(context, route!);
+            }
+          }
         },
         child: Container(
           decoration: BoxDecoration(
@@ -32,9 +36,9 @@ class MenuItem extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const Icon(
+              Icon(
                 Icons.home,
-                color: Colors.white,
+                color: link == route ? const Color(0xff2B286E) : Colors.white,
               ),
               const SizedBox(
                 width: 8,
@@ -43,7 +47,12 @@ class MenuItem extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   title,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color:
+                        link == route ? const Color(0xff2B286E) : Colors.white,
+                    fontWeight:
+                        link == route ? FontWeight.w600 : FontWeight.w400,
+                  ),
                 ),
               ),
             ],

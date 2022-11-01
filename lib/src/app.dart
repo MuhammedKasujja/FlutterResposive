@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mfi_desktop/src/pages/theme_test/theme_test.dart';
+import 'package:mfi_desktop/src/theme/theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-import 'layout/layout.dart';
 import 'pages/home/home.dart';
 import 'sample_feature/sample_item_details_view.dart';
 import 'sample_feature/sample_item_list_view.dart';
@@ -42,9 +43,7 @@ class MyApp extends StatelessWidget {
           ],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
-          theme: ThemeData(
-            scaffoldBackgroundColor: const Color.fromARGB(255, 41, 117, 179),
-          ),
+          theme: AppTheme.light(context),
           darkTheme: ThemeData.light(),
           themeMode: settingsController.themeMode,
           builder: (context, child) => ResponsiveWrapper.builder(
@@ -68,8 +67,8 @@ class MyApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                   default:
-                    // return const Layout();
-                    return const HomePage();
+                    // return const HomePage();
+                    return const ThemeTestPage();
                 }
               },
             );

@@ -16,7 +16,19 @@ class _ThemeTestPageState extends State<ThemeTestPage> {
         actions: const [Icon(Icons.menu)],
       ),
       body: ListView(
-        children: const [Icon(Icons.add), Divider(), TextField()],
+        children: const [
+          Icon(Icons.add),
+          Divider(),
+          TextField(),
+          Text(
+            'Muhammed Kasujja',
+            style: TextStyle(),
+          ),
+          ListTile(
+            title: Text('Item 0'),
+            subtitle: Text('Sub Item'),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

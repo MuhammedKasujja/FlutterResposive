@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MenuItem extends StatelessWidget {
+class SideMenuItem extends StatelessWidget {
   final String title;
   final String? route;
-  const MenuItem({
+  const SideMenuItem({
     Key? key,
     required this.title,
     this.route,

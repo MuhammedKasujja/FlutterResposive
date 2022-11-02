@@ -52,6 +52,57 @@ class AppTheme {
       //   error: Colors.red,
       //   onError: Colors.white,
       // ),
+      textTheme: TextTheme(
+        titleSmall: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Color(0xFF0A2139),
+        ),
+        titleMedium: const TextStyle(
+          fontFamily: 'Montserrat',
+          color: Color(0xFF0A2139),
+        ),
+        displaySmall: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+        ),
+        displayLarge: const TextStyle(
+          fontFamily: 'Montserrat',
+          color: Colors.white,
+          fontWeight: FontWeight.w200,
+        ),
+        labelMedium: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Color(0xFF0A2139),
+          fontWeight: FontWeight.bold,
+        ),
+        labelSmall: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Color(0xFF0A2139),
+          fontWeight: FontWeight.bold,
+        ),
+        labelLarge: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          fontWeight: FontWeight.normal,
+          color: Color(0xFFFF782E),
+        ),
+        headlineSmall: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Color(0xFF0A2139),
+          fontWeight: FontWeight.bold,
+        ),
+        headlineLarge: const TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Color(0xFF0A2139),
+          fontWeight: FontWeight.normal,
+        ),
+        // For Default TextWidget
+        bodyMedium: TextStyle(
+          fontFamily: 'Source Sans Pro',
+          color: Theme.of(context).hintColor,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
     );
   }
 

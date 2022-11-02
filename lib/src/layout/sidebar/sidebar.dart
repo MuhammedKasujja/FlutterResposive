@@ -30,79 +30,79 @@ class _SidebarState extends State<Sidebar> {
             SizedBox(
               height: 20,
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Dashboard',
               route: '/',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Inbox',
               route: '/sample_item',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'File Manager',
               route: '/settings',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Chat',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Post',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Calendar',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Dashboard',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Inbox',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'File Manager',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Chat',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Post',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Calendar',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Dashboard',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Inbox',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'File Manager',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Chat',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Post',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Calendar',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Dashboard',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Inbox',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'File Manager',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Chat',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Post',
             ),
-            MenuItem(
+            SideMenuItem(
               title: 'Calendar',
             ),
             SizedBox(
